@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.venv/
+venv/
+/build/
+/dist/
+
+# Node / dashboard (dashboard/dist est volontairement versionné : Flask le sert sans Node)
+dashboard/node_modules/
+*.log
+
+# Fichiers temporaires de téléchargement
+data/raw/*.part
+
+# Environnement / secrets (ne jamais versionner de secret)
+.env
+*.env
+
+# Divers
+.DS_Store
+Thumbs.db
+.ipynb_checkpoints/
+data/warehouse/*.db

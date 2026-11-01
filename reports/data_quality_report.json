@@ -1,0 +1,235 @@
+{
+  "run_id": "2026-10-30T17:23:02.397370Z_5808496b615421d5",
+  "rules": [
+    {
+      "rule_id": "R01",
+      "table": "flights",
+      "description": "Colonnes obligatoires présentes (17)",
+      "severity": "CRITIQUE",
+      "checked": 17,
+      "violations": 0,
+      "action": "Aucune",
+      "rate": 0.0
+    },
+    {
+      "rule_id": "R01",
+      "table": "weather",
+      "description": "Colonnes obligatoires présentes (15)",
+      "severity": "CRITIQUE",
+      "checked": 15,
+      "violations": 0,
+      "action": "Aucune",
+      "rate": 0.0
+    },
+    {
+      "rule_id": "R01",
+      "table": "airlines",
+      "description": "Colonnes obligatoires présentes (2)",
+      "severity": "CRITIQUE",
+      "checked": 2,
+      "violations": 0,
+      "action": "Aucune",
+      "rate": 0.0
+    },
+    {
+      "rule_id": "R01",
+      "table": "airports",
+      "description": "Colonnes obligatoires présentes (8)",
+      "severity": "CRITIQUE",
+      "checked": 8,
+      "violations": 0,
+      "action": "Aucune",
+      "rate": 0.0
+    },
+    {
+      "rule_id": "R01",
+      "table": "planes",
+      "description": "Colonnes obligatoires présentes (8)",
+      "severity": "CRITIQUE",
+      "checked": 8,
+      "violations": 0,
+      "action": "Aucune",
+      "rate": 0.0
+    },
+    {
+      "rule_id": "R02",
+      "table": "flights",
+      "description": "Valeurs numériques non convertibles",
+      "severity": "AVERTISSEMENT",
+      "checked": 4041312,
+      "violations": 0,
+      "action": "Valeur mise à NULL",
+      "rate": 0.0
+    },
+    {
+      "rule_id": "R02",
+      "table": "weather",
+      "description": "Valeurs numériques non convertibles",
+      "severity": "AVERTISSEMENT",
+      "checked": 339495,
+      "violations": 0,
+      "action": "Valeur mise à NULL",
+      "rate": 0.0
+    },
+    {
+      "rule_id": "R02",
+      "table": "planes",
+      "description": "Valeurs numériques non convertibles",
+      "severity": "AVERTISSEMENT",
+      "checked": 9966,
+      "violations": 0,
+      "action": "Valeur mise à NULL",
+      "rate": 0.0
+    },
+    {
+      "rule_id": "R03",
+      "table": "flights",
+      "description": "Clés métier renseignées (date, compagnie, vol, origine, destination, horaire)",
+      "severity": "CRITIQUE",
+      "checked": 336776,
+      "violations": 0,
+      "action": "Lignes exclues",
+      "rate": 0.0
+    },
+    {
+      "rule_id": "R04",
+      "table": "flights",
+      "description": "Unicité de la clé naturelle year+month+day+carrier+flight+origin+sched_dep_time",
+      "severity": "AVERTISSEMENT",
+      "checked": 336776,
+      "violations": 0,
+      "action": "Doublons exclus (première occurrence conservée)",
+      "rate": 0.0
+    },
+    {
+      "rule_id": "R05",
+      "table": "flights",
+      "description": "Horaire programmé HHMM valide",
+      "severity": "CRITIQUE",
+      "checked": 336776,
+      "violations": 0,
+      "action": "Lignes exclues",
+      "rate": 0.0
+    },
+    {
+      "rule_id": "R06",
+      "table": "flights",
+      "description": "Heure réelle 2400 (minuit) normalisée",
+      "severity": "INFO",
+      "checked": 336776,
+      "violations": 29,
+      "action": "2400 converti en 0000 du jour suivant",
+      "rate": 8.6e-05
+    },
+    {
+      "rule_id": "R07",
+      "table": "flights",
+      "description": "Vols sans heure de départ réelle (annulés)",
+      "severity": "INFO",
+      "checked": 336776,
+      "violations": 8255,
+      "action": "Conservés, marqués cancelled=1 (comptent comme perturbation)",
+      "rate": 0.024512
+    },
+    {
+      "rule_id": "R08",
+      "table": "flights",
+      "description": "Distance strictement positive",
+      "severity": "AVERTISSEMENT",
+      "checked": 336776,
+      "violations": 0,
+      "action": "Lignes exclues",
+      "rate": 0.0
+    },
+    {
+      "rule_id": "R09",
+      "table": "flights",
+      "description": "Retard au départ dans [-120 ; 1 500] min",
+      "severity": "AVERTISSEMENT",
+      "checked": 328521,
+      "violations": 0,
+      "action": "Conservé et signalé",
+      "rate": 0.0
+    },
+    {
+      "rule_id": "R10",
+      "table": "flights",
+      "description": "Compagnie présente dans le référentiel airlines",
+      "severity": "CRITIQUE",
+      "checked": 336776,
+      "violations": 0,
+      "action": "Lignes exclues",
+      "rate": 0.0
+    },
+    {
+      "rule_id": "R11",
+      "table": "flights",
+      "description": "Destination présente dans le référentiel airports (4 codes absents)",
+      "severity": "AVERTISSEMENT",
+      "checked": 336776,
+      "violations": 7602,
+      "action": "Aéroport ajouté comme membre « inconnu » de dim_airport",
+      "rate": 0.022573
+    },
+    {
+      "rule_id": "R12",
+      "table": "flights",
+      "description": "Immatriculation présente dans le référentiel planes",
+      "severity": "AVERTISSEMENT",
+      "checked": 334264,
+      "violations": 50094,
+      "action": "Avion ajouté comme membre « inconnu » de dim_aircraft (âge NULL)",
+      "rate": 0.149864
+    },
+    {
+      "rule_id": "R13",
+      "table": "flights",
+      "description": "Observation météo disponible à l'heure programmée",
+      "severity": "AVERTISSEMENT",
+      "checked": 336776,
+      "violations": 1556,
+      "action": "Variables météo NULL (imputées au moment de l'entraînement)",
+      "rate": 0.00462
+    },
+    {
+      "rule_id": "R14",
+      "table": "weather",
+      "description": "Unicité (origine, heure) des observations météo",
+      "severity": "AVERTISSEMENT",
+      "checked": 26115,
+      "violations": 0,
+      "action": "Doublons exclus",
+      "rate": 0.0
+    },
+    {
+      "rule_id": "R15",
+      "table": "weather",
+      "description": "Vitesse du vent ≤ 150 mph",
+      "severity": "AVERTISSEMENT",
+      "checked": 26111,
+      "violations": 1,
+      "action": "Valeur mise à NULL",
+      "rate": 3.8e-05
+    },
+    {
+      "rule_id": "R16",
+      "table": "planes",
+      "description": "Année de construction entre 1950 et 2013",
+      "severity": "AVERTISSEMENT",
+      "checked": 3252,
+      "violations": 0,
+      "action": "Valeur mise à NULL",
+      "rate": 0.0
+    },
+    {
+      "rule_id": "R17",
+      "table": "planes",
+      "description": "Année de construction renseignée",
+      "severity": "INFO",
+      "checked": 3322,
+      "violations": 70,
+      "action": "Âge de l'avion NULL",
+      "rate": 0.021072
+    }
+  ]
+}

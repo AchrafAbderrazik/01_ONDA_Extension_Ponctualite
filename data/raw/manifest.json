@@ -1,0 +1,51 @@
+{
+  "description": "Empreintes des fichiers sources publics (nycflights13 via Rdatasets).",
+  "licence": "CC0 (package nycflights13, H. Wickham)",
+  "files": [
+    {
+      "name": "flights",
+      "filename": "flights.csv",
+      "url": "https://raw.githubusercontent.com/vincentarelbundock/Rdatasets/master/csv/nycflights13/flights.csv",
+      "sha256": "b791a2590c9167aa0bd3cb45af3f64101180878cf088c183eae4011e3a654f42",
+      "bytes": 33206996,
+      "rows": 336776,
+      "retrieved_at": "2026-10-30T17:12:38Z"
+    },
+    {
+      "name": "weather",
+      "filename": "weather.csv",
+      "url": "https://raw.githubusercontent.com/vincentarelbundock/Rdatasets/master/csv/nycflights13/weather.csv",
+      "sha256": "e69580cc3c18070692b6bf2f52e890803a313507c23283b15f06dbbae86451cf",
+      "bytes": 2391865,
+      "rows": 26115,
+      "retrieved_at": "2026-10-30T17:12:39Z"
+    },
+    {
+      "name": "airlines",
+      "filename": "airlines.csv",
+      "url": "https://raw.githubusercontent.com/vincentarelbundock/Rdatasets/master/csv/nycflights13/airlines.csv",
+      "sha256": "5c9f0c947dca4a2b7e009c9dc86b96fc637e45bf39a034bffb413e84b98b08f6",
+      "bytes": 434,
+      "rows": 16,
+      "retrieved_at": "2026-10-30T17:12:39Z"
+    },
+    {
+      "name": "airports",
+      "filename": "airports.csv",
+      "url": "https://raw.githubusercontent.com/vincentarelbundock/Rdatasets/master/csv/nycflights13/airports.csv",
+      "sha256": "f1c5dba736fa36ecffa93cd0556b9b920a4b1a5e27bbc3ed417f05fa42edf3d6",
+      "bytes": 110488,
+      "rows": 1458,
+      "retrieved_at": "2026-10-30T17:12:39Z"
+    },
+    {
+      "name": "planes",
+      "filename": "planes.csv",
+      "url": "https://raw.githubusercontent.com/vincentarelbundock/Rdatasets/master/csv/nycflights13/planes.csv",
+      "sha256": "95a3cd5a64dc1c4ae0c002e6aec457084455ea5835d73368114285f79a66a65c",
+      "bytes": 255972,
+      "rows": 3322,
+      "retrieved_at": "2026-10-30T17:12:39Z"
+    }
+  ]
+}

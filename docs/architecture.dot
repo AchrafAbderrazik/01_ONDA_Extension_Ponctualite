@@ -1,0 +1,21 @@
+digraph G {
+  rankdir=LR; fontname="Helvetica"; node [shape=box, style="rounded,filled", fillcolor="#EEF3F7", color="#0B4A6F", fontname="Helvetica", fontsize=11];
+  edge [color="#4B5563", fontname="Helvetica", fontsize=9];
+  subgraph cluster_src { label="Sources publiques (CSV, CC0)"; style=dashed; color="#9FB7C9";
+    flights [label="flights.csv\n336 776 vols"]; weather [label="weather.csv\nmétéo horaire"]; refs [label="airlines / airports / planes\nréférentiels"]; }
+  extract [label="extract.py\ntéléchargement + SHA-256"];
+  validate [label="validate.py\n17 règles qualité\n(critique / avertissement / info)"];
+  transform [label="transform.py\nnettoyage, indicateurs,\nmembres « inconnus »"];
+  load [label="load.py\nchargement transactionnel\net idempotent"];
+  db [label="SQLite — schéma en étoile\nfact_flight · fact_weather_hourly\ndim_airport · dim_carrier · dim_aircraft · dim_date\netl_runs · dq_results · predictions · anomalies", shape=cylinder, fillcolor="#FFF8E6"];
+  train [label="train.py\nfeatures sans fuite + découpage temporel\nréférence · régression logistique · HGB"];
+  anom [label="anomalies.py\nz-score robuste (28 j)\n+ cause météo probable"];
+  model [label="models/model.joblib\nmetrics.json", shape=note];
+  api [label="API Flask (blueprint /api)\nKPI · séries · anomalies · risque\npredict · qualité · modèle · admin JWT"];
+  ui [label="Tableau de bord React\n(Vite + Recharts)\nservi par Flask"];
+  flights -> extract; weather -> extract; refs -> extract;
+  extract -> validate -> transform -> load -> db;
+  db -> train -> model; train -> db [label="prédictions"];
+  db -> anom -> db [label="anomalies"];
+  db -> api; model -> api; api -> ui [label="JSON"];
+}

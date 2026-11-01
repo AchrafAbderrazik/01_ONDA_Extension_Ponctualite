@@ -1,0 +1,21 @@
+{
+  "days_scored": 1014,
+  "days_flagged": 95,
+  "share_flagged_with_adverse_weather": 0.7684210526315789,
+  "share_all_days_with_adverse_weather": 0.2593688362919132,
+  "lift": 2.9626575945567337,
+  "blizzard_2013_02_08_09_flagged_airports": {
+    "2013-02-08": [
+      "EWR",
+      "JFK",
+      "LGA"
+    ],
+    "2013-02-09": [
+      "EWR",
+      "JFK",
+      "LGA"
+    ]
+  },
+  "z_threshold": 3.0,
+  "window_days": 28
+}
